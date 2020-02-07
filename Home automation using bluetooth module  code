@@ -1,0 +1,189 @@
+//Code developed by PULAK KOLEY
+//CopyRight by © PULAK KOLEY
+//Email: koley.pulak@gmail.com
+//Please SUBSCRIBE
+//www.YouTube.com/c/MakerHand
+//www.YouTube.com/c/HobbyHINDI
+
+int R1=2;
+int R2=3;
+int R3=4;
+int R4=5;
+int R5=6;
+int R6=7;
+int R7=8;
+int R8=9;
+
+int Received = 0;
+int R1_state = 0;
+int R2_state = 0;
+int R3_state = 0;
+int R4_state = 0;
+int R5_state = 0;
+int R6_state = 0;
+int R7_state = 0;
+int R8_state = 0;
+
+
+void setup(){
+  
+  Serial.begin(9600);
+  pinMode(R1,OUTPUT);
+  pinMode(R2,OUTPUT);
+  pinMode(R3,OUTPUT);
+  pinMode(R4,OUTPUT);
+  pinMode(R5,OUTPUT);
+  pinMode(R6,OUTPUT);
+  pinMode(R7,OUTPUT);
+  pinMode(R8,OUTPUT);
+  
+}
+
+void loop(){
+ 
+ if(Serial.available()>0)
+ { 
+    Received = Serial.read();
+    
+ }
+
+////////////////RELAY_1/////////////////////
+if (R1_state == 0 && Received == '1')
+  {
+    digitalWrite(R1,HIGH);
+    R1_state=1;
+    Received=0;  
+  }
+if (R1_state ==1 && Received == '1')
+  {
+    digitalWrite(R1,LOW);
+    R1_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_2/////////////////////
+if (R2_state == 0 && Received == 'a')
+  {
+    digitalWrite(R2,HIGH);
+    R2_state=1;
+    Received=0;  
+  }
+if (R2_state ==1 && Received == 'a')
+  {
+    digitalWrite(R2,LOW);
+    R2_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_3/////////////////////
+if (R3_state == 0 && Received == '2')
+  {
+    digitalWrite(R3,HIGH);
+    R3_state=1;
+    Received=0;  
+  }
+if (R3_state ==1 && Received == '2')
+  {
+    digitalWrite(R3,LOW);
+    R3_state=0;
+    Received=0;
+  }
+  
+////////////////RELAY_4/////////////////////
+if (R4_state == 0 && Received == '3')
+  {
+    digitalWrite(R4,HIGH);
+    R4_state=1;
+    Received=0;  
+  }
+if (R4_state ==1 && Received == '3')
+  {
+    digitalWrite(R4,LOW);
+    R4_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_5/////////////////////
+ if (R5_state == 0 && Received == '4')
+  {
+    digitalWrite(R5,HIGH);
+    R5_state=1;
+    Received=0;  
+  }
+if (R5_state ==1 && Received == '4')
+  {
+    digitalWrite(R5,LOW);
+    R5_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_6/////////////////////
+  if (R6_state == 0 && Received == '5')
+  {
+    digitalWrite(R6,HIGH);
+    R6_state=1;
+    Received=0;  
+  }
+if (R6_state ==1 && Received == '5')
+  {
+    digitalWrite(R6,LOW);
+    R6_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_7/////////////////////
+  if (R7_state == 0 && Received == '6')
+  {
+    digitalWrite(R7,HIGH);
+    R7_state=1;
+    Received=0;  
+  }
+if (R7_state ==1 && Received == '6')
+  {
+    digitalWrite(R7,LOW);
+    R7_state=0;
+    Received=0;
+  }
+
+////////////////RELAY_8/////////////////////
+  if (R8_state == 0 && Received == '7')
+  {
+    digitalWrite(R8,HIGH);
+    R8_state=1;
+    Received=0;  
+  }
+if (R8_state ==1 && Received == '7')
+  {
+    digitalWrite(R8,LOW);
+    R8_state=0;
+    Received=0;
+  }
+
+ ////////////////POWER/////////////////////
+  if (Received == '8')
+  {
+    digitalWrite(R1,HIGH);
+    R1_state=1;
+    Received=0;  
+    digitalWrite(R2,HIGH);
+    R2_state=1;
+    Received=0;  
+    digitalWrite(R3,HIGH);
+    R3_state=1;
+    Received=0;  
+    digitalWrite(R4,HIGH);
+    R4_state=1;
+    Received=0;  
+    digitalWrite(R5,HIGH);
+    R5_state=1;
+    Received=0;  
+    digitalWrite(R6,HIGH);
+    R6_state=1;
+    Received=0;  
+    digitalWrite(R7,HIGH);
+    R7_state=1;
+    Received=0;  
+    digitalWrite(R8,HIGH);
+    R8_state=1;
+    Received=0;  
+  }}
